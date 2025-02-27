@@ -2,20 +2,163 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Canopee;
+  src: url(../public/Canopee\ Regular.otf);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
+  --pr-color: #150a06;
+  --second-color: #fdf7f4;
+  --matte-color: #fd7f52;
+  --green-color: #52fd7f;
+  --cubicbz: cubic-bezier(0.9, 0, 1, 1);
+  --fz-big: 60px;
+  --p-size: 14px;
+  --background: #fff5ed;
+  --alt-green-color: #9cee69;
+  --black-color: #191919;
+  --white-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
+    --pr-color: #150a06;
+    --second-color: #fdf7f4;
+    --matte-color: #fd7f52;
+    --green-color: #52fd7f;
+    --cubicbz: cubic-bezier(0.9, 0, 1, 1);
+    --fz-big: 60px;
+    --p-size: 14px;
+    --background: #fff5ed;
+    --alt-green-color: #9cee69;
+    --black-color: #191919;
+    --white-color: #ffffff;
+    --btn-bg: rgba(255, 255, 255, 0);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  cursor: none;
 }
+
+body {
+  color: var(--black-color);
+  background: var(--background);
+}
+
+section {
+  padding-top: 5vw;
+  padding-bottom: 1.9vw;
+  padding-right: 2.734vw;
+  padding-left: 2.734vw;
+}
+
+.footer-padding {
+  padding-top: 2vw;
+  padding-bottom: 1.9vw;
+  padding-right: 2.734vw;
+  padding-left: 2.734vw;
+}
+
+nav > div {
+  flex: 1;
+}
+
+.title .stroketx {
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--second-color);
+}
+
+.ease-in-out-cubic {
+  transition-timing-function: cubic-bezier(0.65, 0, 0, 1);
+}
+
+.ease-expo {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-heading {
+  font-size: 3.375vw;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 1.9rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: var(--black-color);
+  padding: 3px 8px;
+  text-transform: uppercase;
+  font-family: var(--font-roboto);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  z-index: 9999;
+}
+
+.follow {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  z-index: 9998;
+  transition: transform 0.2s;
+}
+
+.cursor,
+.follow {
+  mix-blend-mode: difference;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cursor.active,
+.follow.active {
+  transform: scale(1.5);
+}
+
+/* HTML: <div class="batman"></div>
+.batman {
+  width: 100%;
+  max-width: 60px;
+  aspect-ratio: 3;
+  background: #fff;
+  --g:#fff calc(100% - 1px),#0000;
+  mask:
+    conic-gradient(from 170deg at 47% 8%,#0000,#fff 2deg 20deg,#0000 22deg) 
+     0 0/100% 50% no-repeat,
+    conic-gradient(from 170deg at 53% 8%,#0000,#fff 2deg 20deg,#0000 22deg) 
+     0 0/100% 50% no-repeat,
+    radial-gradient(4.5% 20% at 50% 35%,var(--g)),
+    conic-gradient(#fff 0 0) exclude,
+    radial-gradient(20% 35% at 50% -5%,var(--g)),
+    radial-gradient(30% 44% at 20% 100%,var(--g)),
+    radial-gradient(30% 44% at 80% 100%,var(--g)),
+    radial-gradient(16% 51% at left ,var(--g)),
+    radial-gradient(16% 51% at right,var(--g));
+} */
