@@ -6,9 +6,9 @@ import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(useGSAP);
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// };
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
 
 //navbar
 const Navbar = () => {

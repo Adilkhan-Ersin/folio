@@ -11,15 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useGSAP(() => {
-    const clipAnimation = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.clipAnima',
-        start: 'top top',
-        end: '+=50%',
-        scrub: 0.5,
-      },
-    });
-
     const shrinkingAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: '.clipAnima',
@@ -31,7 +22,7 @@ export default function About() {
 
     shrinkingAnimation.to('.clipAnima', {
       scale: 0.95,
-      borderRadius: '2rem',
+      borderRadius: '0 0 2rem 2rem',
       ease: 'power1.inOut',
     });
   });

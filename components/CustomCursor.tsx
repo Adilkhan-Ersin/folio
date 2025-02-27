@@ -4,15 +4,15 @@ import { gsap } from 'gsap';
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const cursorRef = useRef(null);
-  const followRef = useRef(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const followRef = useRef<HTMLDivElement>(null);
   
   // Track current position for the follow cursor
   const posX = useRef(0);
   const posY = useRef(0);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       setPosition({ x: clientX, y: clientY });
     };

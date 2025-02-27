@@ -43,7 +43,7 @@ export default function Footer() {
         <div className='flex flex-col md:col-span-6'>
           <h3 className='mb-3 flex border-b-[1.5px] border-[var(--black-color)] pb-2 font-bold tracking-[0] '>Menu</h3>
           {menu.map((item, index) => (
-            <a key={index} href={item.href} target='_blank' rel='noopener noreferrer' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
+            <a key={index} href={item.href} className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
               <span className='relative inline-flex overflow-hidden'>
                 <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>{item.name}</div>
                 <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>{item.name}</div>

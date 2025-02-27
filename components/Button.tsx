@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Button = ({ title, icon, containerClass, onClickThug }) => {
+type ButtonProps = {
+  title?: string;
+  icon?: React.ReactNode;
+  containerClass: string;
+  onClickThug: () => void;
+}
+const Button = ({ title, icon, containerClass, onClickThug }: ButtonProps) => {
   return (
     <button onClick={onClickThug} className={containerClass}>
       <span className='absolute flex transition-all duration-500 ease-in-out-cubic group-hover:-translate-y-20'>

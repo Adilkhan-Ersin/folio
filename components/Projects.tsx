@@ -9,15 +9,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-export const BentoTilt = ({ children, className = "" }) => {
+interface BentoTiltProps {
+  children: React.ReactNode;
+  className?: string;
+}
+export const BentoTilt = ({ children, className = "" }: BentoTiltProps) => {
   const [transformStyle, setTransformStyle] = useState("");
-  const itemRef = useRef(null);
+  const itemRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!itemRef.current) return;
 
-    const { left, top, width, height } =
-      itemRef.current.getBoundingClientRect();
+    const { left, top, width, height } = itemRef.current.getBoundingClientRect();
 
     const relativeX = (event.clientX - left) / width;
     const relativeY = (event.clientY - top) / height;
@@ -41,7 +44,7 @@ export const BentoTilt = ({ children, className = "" }) => {
 };
 
 export default function Projects() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const setCurrentIndex = useRef(0);
   const numbersRef = useRef(null);
 
   const works = [
@@ -69,7 +72,7 @@ export default function Projects() {
             duration: 0.5,
             ease: "power2.inOut"
           });
-          setCurrentIndex(index);
+          setCurrentIndex.current = index;
         },
         onLeaveBack: () => {
           // When scrolling back up
@@ -78,7 +81,7 @@ export default function Projects() {
             duration: 0.5,
             ease: "power2.inOut"
           });
-          setCurrentIndex(index-1);
+          setCurrentIndex.current = index - 1;
         }
       });
     });
