@@ -1,13 +1,10 @@
-// app/certificats.tsx
 'use client'
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
-// import CustomCursor from '@/components/CustomCursor';
 
 const CustomCursor = dynamic(() => import('@/components/CustomCursor'), {
   ssr: false
@@ -15,35 +12,37 @@ const CustomCursor = dynamic(() => import('@/components/CustomCursor'), {
 
 export default function Certifications() {
   useEffect(() => {
-    gsap.registerPlugin(useGSAP, ScrollTrigger);
-  }, []);
+    if (typeof window !== 'undefined') { // Ensure it only runs on the client
+      gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(() => {
-    gsap.to('.title-gsp', {
-      scrollTrigger: {
-        trigger: '.header',
-        start: 'top top',
-        scrub: 1.9},
-      xPercent: -80
-    });
-    gsap.to('.header .stroketx', {
-      scrollTrigger: {
-        trigger: '.header',
-        start: 'top top',
-        scrub: 1.9
-      },
-      xPercent: 80
-    });
-  });
+      gsap.to('.title-gsp', {
+        scrollTrigger: {
+          trigger: '.header',
+          start: 'top top',
+          scrub: 1.9
+        },
+        xPercent: -80
+      });
+
+      gsap.to('.header .stroketx', {
+        scrollTrigger: {
+          trigger: '.header',
+          start: 'top top',
+          scrub: 1.9
+        },
+        xPercent: 80
+      });
+    }
+  }, []);
 
   return (
     <>
-      <CustomCursor/>
+      <CustomCursor />
       <Navbar />
       <section className="header overflow-hidden relative flex justify-center items-center w-full h-[100vh] font-[Syne]" id='hero'>
         <h1 className='title relative m-0 text-[4.375vw] text-center uppercase mix-blend-difference leading-[1.1] text-[var(--second-color)] z-[2]'>
-          <span className='title-gsp inline-block will-change-transform'>Fuck</span>
-          <Link href='/' className='stroketx'>You</Link>
+          <span className='title-gsp inline-block will-change-transform'>Hello</span>
+          <Link href='/' className='stroketx'>World</Link>
         </h1>
       </section>
       <div className='h-screen w-screen'></div>
