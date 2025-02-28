@@ -6,11 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md';
 import Link from 'next/link';
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect } from 'react';
 
 export default function About() {
+  useEffect(() => {
+    gsap.registerPlugin(useGSAP, ScrollTrigger);
+  }, []);
+
   useGSAP(() => {
     const shrinkingAnimation = gsap.timeline({
       scrollTrigger: {

@@ -1,16 +1,23 @@
 // app/certificats.tsx
 'use client'
+import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
-import CustomCursor from '@/components/CustomCursor';
+// import CustomCursor from '@/components/CustomCursor';
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+const CustomCursor = dynamic(() => import('@/components/CustomCursor'), {
+  ssr: false
+});
 
 export default function Certifications() {
+  useEffect(() => {
+    gsap.registerPlugin(useGSAP, ScrollTrigger);
+  }, []);
+
   useGSAP(() => {
     gsap.to('.title-gsp', {
       scrollTrigger: {

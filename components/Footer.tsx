@@ -5,11 +5,13 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaArrowUp } from 'react-icons/fa';
 import Button from './Button';
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect } from 'react';
 
 export default function Footer() {
+  useEffect(() => {
+    gsap.registerPlugin(useGSAP, ScrollTrigger);
+  }, []);
+
   const menu = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },

@@ -1,17 +1,20 @@
 // components/Navbar.tsx
 'use client'
 import Link from 'next/link'
-import { useState, useRef} from 'react'
+import { useState, useRef, useEffect} from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 
-gsap.registerPlugin(useGSAP);
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
 //navbar
 const Navbar = () => {
+  useEffect(() => {
+    gsap.registerPlugin(useGSAP);
+  });
+
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const overlay = useRef(null);
