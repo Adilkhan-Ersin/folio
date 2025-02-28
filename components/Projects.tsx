@@ -5,6 +5,7 @@ import Image from 'next/image'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -48,11 +49,11 @@ export default function Projects() {
   const numbersRef = useRef(null);
 
   const works = [
-    { title: "Utopia", secondTitle: "Poster Design", image: "/img/utopia.png", link: "#", tag: "Design", },
-    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/theweeknd.png", link: "#", tag: "Design", },
-    { title: "Greg", secondTitle: "Poster Design", image: "/img/grok.png", link: "#", tag: "Design", },
-    { title: "Paper Ice", secondTitle: "PFP", image: "/img/paperIce.png", link: "#", tag: "Design", },
-    { title: "Ice OG", secondTitle: "Digital Art", image: "/img/ice.png", link: "#", tag: "Design", },
+    { title: "Utopia", secondTitle: "Poster Design", image: "/img/utopia.png", link: "/projects", tag: "Design", },
+    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/theweeknd.png", link: "/projects", tag: "Design", },
+    { title: "Greg", secondTitle: "Poster Design", image: "/img/grok.png", link: "/projects", tag: "Design", },
+    { title: "Paper Ice", secondTitle: "PFP", image: "/img/paperIce.png", link: "/projects", tag: "Design", },
+    { title: "Ice OG", secondTitle: "Digital Art", image: "/img/ice.png", link: "/projects", tag: "Design", },
   ]
 
   useGSAP(() => {
@@ -112,7 +113,7 @@ export default function Projects() {
         <aside className="relative col-span-7 flex flex-col gap-y-2">
           {works.map((work, index) => (
             <div key={index} className="@container containers min-h-[80vh] pb-5">
-              <a href='#' >
+              <Link href={work.link}>
                 <BentoTilt className="relative transition-transform duration-300 ease-out flex aspect-square items-center justify-center overflow-clip rounded-md p-3">
                   <Image className='absolute h-full w-full object-cover' src={work.image} alt="poster" width={1309} height={1000} />
                 </BentoTilt>
@@ -127,7 +128,7 @@ export default function Projects() {
                     <span className="tag">2024</span>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
         </aside>

@@ -18,16 +18,16 @@ export default function Footer() {
   ]
 
   const social = [
-    { name: 'LinkedIn', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
-    { name: 'Instagram', href: '#' },
-    { name: 'Github', href: '#' },
-    { name: 'Telegram', href: '#' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/adilkhan-ersin/' },
+    { name: 'Instagram', href: 'https://www.instagram.com/adilikecious/' },
+    { name: 'Github', href: 'https://github.com/Adilkhan-Ersin' },
+    { name: 'Telegram', href: 'https://t.me/Adilkhan51' },
   ]
 
   const resources = [
     { name: 'Privacy Policy', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
     { name: 'Terms & Conditions', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
-    { name: 'Cookie Policy', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
+    { name: 'Berkut loh', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
   ]
 
   const scrollToTop = () => {

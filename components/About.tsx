@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md';
+import Link from 'next/link';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -48,7 +49,7 @@ export default function About() {
               <span className='flex h-full font-medium uppercase text-nowrap text-[var(--second-color)]'>
                 (About Me)
               </span>
-              <a href='#' className='tag !border-[var(--second-color)] text-[var(--second-color)]'>Certificates</a>
+              <Link href='/certificates' className='tag !border-[var(--second-color)] text-[var(--second-color)]'>Certificates</Link>
             </span>
             <p className='flex w-full max-w-[38ch] flex-col text-balance text-base font-medium leading-[132.5%] text-[var(--second-color)]'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat pariatur a deserunt nam debitis, ipsum consequuntur corporis ratione. 

@@ -21,16 +21,16 @@ const Navbar = () => {
 
   const navigation = [
     { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
+    { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
   
   const navsocial = [
-    { name: 'LinkedIn |', href: '#' },
-    { name: 'Instagram |', href: '#' },
-    { name: 'Github |', href: '#' },
-    { name: 'Telegram', href: '#' },
+    { name: 'LinkedIn |', href: 'https://www.linkedin.com/in/adilkhan-ersin/' },
+    { name: 'Instagram |', href: 'https://www.instagram.com/adilikecious/' },
+    { name: 'Github |', href: 'https://github.com/Adilkhan-Ersin' },
+    { name: 'Telegram', href: 'https://t.me/Adilkhan51' },
   ];
 
   useGSAP(() => {
@@ -124,6 +124,8 @@ const Navbar = () => {
             <Link 
               key={sosal.name}
               href={sosal.href}
+              target='_blank'
+              rel='noopener noreferrer'
               onClick={toggleMenu}
               className='font-[Canopee] text-3xl text-[var(--second-color)]'>{sosal.name}
             </Link>
