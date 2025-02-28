@@ -5,15 +5,17 @@ import { useState, useRef, useEffect} from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
-
 //navbar
 const Navbar = () => {
   useEffect(() => {
     gsap.registerPlugin(useGSAP);
-  });
+    
+    if (typeof window !== 'undefined') { // Ensure it's only running in the browser
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+    }
+  }, []);
 
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
