@@ -51,6 +51,7 @@ const CustomCursor = () => {
 
   useEffect(() => {
     // Add hover effects to interactive elements
+    if (typeof document === 'undefined') return;
     const interactiveElements = document.querySelectorAll(
       'Button, button, a'
     );
