@@ -45,7 +45,7 @@ export const BentoTilt = ({ children, className = "" }: BentoTiltProps) => {
 };
 
 export default function Projects() {
-  const setCurrentIndex = useRef(0);
+  // const setCurrentIndex = useRef(0);
   const numbersRef = useRef(null);
 
   const works = [
@@ -56,41 +56,41 @@ export default function Projects() {
     { title: "Ice OG", secondTitle: "Digital Art", image: "/img/ice.png", link: "/projects", tag: "Design", },
   ]
 
-  useGSAP(() => {
-    const containers = document.querySelectorAll('.containers');
+  // useGSAP(() => {
+  //   const containers = document.querySelectorAll('.containers');
 
-    if (!numbersRef.current || containers.length <= 1) return;
+  //   if (!numbersRef.current || containers.length <= 1) return;
     
-    containers.forEach((container, index) => {
-      if (index === 0) return; // Skip for the first container as we start with 1 visible
+  //   containers.forEach((container, index) => {
+  //     if (index === 0) return; // Skip for the first container as we start with 1 visible
       
-      ScrollTrigger.create({
-        trigger: container,
-        start: "top 80%", // When the top of container reaches 80% of viewport height
-        onEnter: () => {
-          gsap.to(numbersRef.current, {
-            y: `-${index * 100}%`,
-            duration: 0.5,
-            ease: "power2.inOut"
-          });
-          setCurrentIndex.current = index;
-        },
-        onLeaveBack: () => {
-          // When scrolling back up
-          gsap.to(numbersRef.current, {
-            y: `-${(index-1) * 100}%`,
-            duration: 0.5,
-            ease: "power2.inOut"
-          });
-          setCurrentIndex.current = index - 1;
-        }
-      });
-    });
+  //     ScrollTrigger.create({
+  //       trigger: container,
+  //       start: "top 80%", // When the top of container reaches 80% of viewport height
+  //       onEnter: () => {
+  //         gsap.to(numbersRef.current, {
+  //           y: `-${index * 100}%`,
+  //           duration: 0.5,
+  //           ease: "power2.inOut"
+  //         });
+  //         setCurrentIndex.current = index;
+  //       },
+  //       onLeaveBack: () => {
+  //         // When scrolling back up
+  //         gsap.to(numbersRef.current, {
+  //           y: `-${(index-1) * 100}%`,
+  //           duration: 0.5,
+  //           ease: "power2.inOut"
+  //         });
+  //         setCurrentIndex.current = index - 1;
+  //       }
+  //     });
+  //   });
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  //   };
+  // }, []);
 
   return (
     <section className="project-section" id='projects'>
