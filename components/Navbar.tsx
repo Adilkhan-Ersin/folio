@@ -22,7 +22,7 @@ const Navbar = () => {
   const overlay = useRef(null);
   const sosal = useRef(null);
   const timeline = useRef(gsap.timeline({ paused: true }));
-  const hoverText = document.querySelector(".hover-text");
+  // const hoverText = document.querySelector(".hover-text");
 
   const navigation = [
     { name: 'Home', href: '#hero' },
@@ -41,15 +41,15 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.set(".menu-item p", { y: 225 });
     //hover menu items
-    hoverText?.addEventListener('mouseenter', () => timeline.current.to("p", {
-      duration: 0.5,
-      letterSpacing: 21,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.2,
-        from: "center",
-      }
-    }));
+    // hoverText?.addEventListener('mouseenter', () => timeline.current.to("p", {
+    //   duration: 0.5,
+    //   letterSpacing: 21,
+    //   ease: "power4.out",
+    //   stagger: {
+    //     amount: 0.2,
+    //     from: "center",
+    //   }
+    // }));
     
     //menu overlay
     timeline.current.to(overlay.current, {
@@ -119,7 +119,8 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               onClick={toggleMenu}
-              className='menu-item [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] relative text-center font-[Canopee] text-[260px] leading-[80%] text-[var(--second-color)] transition-[letter-spacing] duration-300 will-change-transform hover:tracking-[21px] transform-gpu'><p className='hover-text'>{item.name}</p>
+              className='menu-item [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] relative text-center font-[Canopee] text-[260px] leading-[80%] text-[var(--second-color)] transition-[letter-spacing] duration-300 will-change-transform hover:tracking-[21px] transform-gpu'>
+                <p className='hover-text tracking-normal transition-[letter-spacing] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:tracking-[21px]'>{item.name}</p>
               </Link>
             ))}
         </div>
