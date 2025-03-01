@@ -7,8 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 interface BentoTiltProps {
   children: React.ReactNode;
@@ -45,8 +44,9 @@ export const BentoTilt = ({ children, className = "" }: BentoTiltProps) => {
 };
 
 export default function Projects() {
-  // const setCurrentIndex = useRef(0);
+  const setCurrentIndex = useRef(0);
   const numbersRef = useRef(null);
+  const containerRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const works = [
     { title: "Utopia", secondTitle: "Poster Design", image: "/img/utopia.png", link: "/projects", tag: "Design", },
@@ -56,41 +56,39 @@ export default function Projects() {
     { title: "Ice OG", secondTitle: "Digital Art", image: "/img/ice.png", link: "/projects", tag: "Design", },
   ]
 
-  // useGSAP(() => {
-  //   const containers = document.querySelectorAll('.containers');
-
-  //   if (!numbersRef.current || containers.length <= 1) return;
+  useGSAP(() => {
+    if (!numbersRef.current || containerRef.current.length <= 1) return;
     
-  //   containers.forEach((container, index) => {
-  //     if (index === 0) return; // Skip for the first container as we start with 1 visible
+    containerRef.current.forEach((container, index) => {
+      if (index === 0) return; // Skip for the first container as we start with 1 visible
       
-  //     ScrollTrigger.create({
-  //       trigger: container,
-  //       start: "top 80%", // When the top of container reaches 80% of viewport height
-  //       onEnter: () => {
-  //         gsap.to(numbersRef.current, {
-  //           y: `-${index * 100}%`,
-  //           duration: 0.5,
-  //           ease: "power2.inOut"
-  //         });
-  //         setCurrentIndex.current = index;
-  //       },
-  //       onLeaveBack: () => {
-  //         // When scrolling back up
-  //         gsap.to(numbersRef.current, {
-  //           y: `-${(index-1) * 100}%`,
-  //           duration: 0.5,
-  //           ease: "power2.inOut"
-  //         });
-  //         setCurrentIndex.current = index - 1;
-  //       }
-  //     });
-  //   });
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top 80%", // When the top of container reaches 80% of viewport height
+        onEnter: () => {
+          gsap.to(numbersRef.current, {
+            y: `-${index * 100}%`,
+            duration: 0.5,
+            ease: "power2.inOut"
+          });
+          setCurrentIndex.current = index;
+        },
+        onLeaveBack: () => {
+          // When scrolling back up
+          gsap.to(numbersRef.current, {
+            y: `-${(index-1) * 100}%`,
+            duration: 0.5,
+            ease: "power2.inOut"
+          });
+          setCurrentIndex.current = index - 1;
+        }
+      });
+    });
 
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  //   };
-  // }, []);
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return (
     <section className="project-section" id='projects'>
@@ -112,7 +110,7 @@ export default function Projects() {
         </div>
         <aside className="relative col-span-7 flex flex-col gap-y-2">
           {works.map((work, index) => (
-            <div key={index} className="@container containers min-h-[80vh] pb-5">
+            <div key={index} ref={(el) => { containerRef.current[index] = el; }} className="@container containers min-h-[80vh] pb-5">
               <Link href={work.link}>
                 <BentoTilt className="relative transition-transform duration-300 ease-out flex aspect-square items-center justify-center overflow-clip rounded-md p-3">
                   <Image className='absolute h-full w-full object-cover' src={work.image} alt="poster" width={1309} height={1000} />
