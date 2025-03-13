@@ -5,6 +5,7 @@ import Projects from '@/components/Projects'
 import Footer from '@/components/Footer'
 import CustomCursor from '@/components/CustomCursor';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 // import Certifications from '@/components/Certifications'
 
 
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <Footer />
       <Analytics />
+      <SpeedInsights />
       {/* 
       <Skills />
       <Certifications /> */}

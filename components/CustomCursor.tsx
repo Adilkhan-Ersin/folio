@@ -6,6 +6,7 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const cursorRef = useRef<HTMLDivElement>(null);
   const followRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
   
   // Track current position for the follow cursor
   const posX = useRef(0);
@@ -42,8 +43,17 @@ const CustomCursor = () => {
       }
     });
 
+    // Disable cursor on mobile devices
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 800);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
     // Clean up event listeners and GSAP ticker
     return () => {
+      window.removeEventListener('resize', checkIfMobile);
       window.removeEventListener('mousemove', handleMouseMove);
       gsap.ticker.remove(ticker);
     };
@@ -79,6 +89,8 @@ const CustomCursor = () => {
       });
     };
   }, []);
+
+  if (isMobile) return null;
 
   return (
     <>

@@ -88,16 +88,16 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className='fixed w-full flex justify-between items-center text-[color:var(--second-color)] mix-blend-difference z-50 px-8 py-6'>
-        <div className='text-center text-2xl font-[Canopee]'>
+      <nav className='fixed w-screen flex justify-between items-center text-[color:var(--second-color)] mix-blend-difference z-50 px-4 py-3 lg:px-8 lg:py-6'>
+        <div className='text-center text-lg font-[Canopee] lg:text-2xl'>
           <p>Adok</p>
         </div>
-        <div className='text-center text-4xl font-[Canopee]'>
+        <div className='text-center text-[22px] font-[Canopee] lg:text-4xl'>
           <p><Link href='/'>The Portfolio</Link></p>
         </div>
         <div className='flex justify-end'>
           <button ref={menuRef} onClick={toggleMenu} 
-            className='flex justify-center items-center w-7 h-5 pt-7 pb-6 px-8 border-none outline-none'
+            className='flex justify-center items-center w-7 h-5 py-7 px-10 border-none outline-none'
             >
               <div className={`
               relative w-full h-full
@@ -112,20 +112,20 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div ref={overlay} className={'fixed top-0 left-0 w-full h-full flex bg-[var(--matte-color)] z-10 [clip-path:polygon(0_0,100%_0,100%_0,0_0)]'}>
-        <div className='fixed top-0 left-0 w-full h-full flex gap-4 flex-col justify-center items-center'>
+      <div ref={overlay} className={'fixed top-0 left-0 w-screen h-screen flex bg-[var(--matte-color)] z-10 [clip-path:polygon(0_0,100%_0,100%_0,0_0)]'}>
+        <div className='fixed top-0 left-0 w-screen h-screen flex gap-3 lg:gap-4 flex-col justify-center items-center'>
             {navigation.map((item) => (
               <Link 
               key={item.name}
               href={item.href}
               onClick={toggleMenu}
-              className='menu-item [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] relative text-center font-[Canopee] text-[260px] leading-[80%] text-[var(--second-color)] transition-[letter-spacing] duration-300 will-change-transform hover:tracking-[21px] transform-gpu'>
+              className='menu-item [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] relative text-center font-[Canopee] text-8xl lg:text-[260px] leading-[80%] text-[var(--second-color)] transform-gpu'>
                 <p className='hover-text tracking-normal transition-[letter-spacing] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:tracking-[21px]'>{item.name}</p>
               </Link>
             ))}
         </div>
 
-        <div ref={sosal} className='absolute bottom-[5%] left-[50%] translate-x-[-50%] flex gap-2 opacity-0'>
+        <div ref={sosal} className='absolute bottom-[5%] left-[50%] translate-x-[-50%] flex w-full justify-center gap-2 opacity-0'>
           {navsocial.map((sosal) => (
             <Link 
               key={sosal.name}
@@ -133,7 +133,7 @@ const Navbar = () => {
               target='_blank'
               rel='noopener noreferrer'
               onClick={toggleMenu}
-              className='font-[Canopee] text-3xl text-[var(--second-color)]'>{sosal.name}
+              className='font-[Canopee] text-2xl lg:text-3xl text-[var(--second-color)]'>{sosal.name}
             </Link>
           ))}
         </div>

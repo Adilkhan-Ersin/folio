@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, Roboto } from "next/font/google";
+import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
@@ -8,11 +8,18 @@ const syne = Syne({
   variable: "--font-syne",
 });
 
-const roboto = Roboto({
+// const roboto = Roboto({
+//   weight: ['100', '300', '400', '500', '700', '900'],
+//   subsets: ["latin"],
+//   style: ['normal', 'italic'],
+//   variable: "--font-roboto",
+// })
+
+const inter = Inter({
   weight: ['100', '300', '400', '500', '700', '900'],
   subsets: ["latin"],
   style: ['normal', 'italic'],
-  variable: "--font-roboto",
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
@@ -27,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${syne.variable} antialiased`}>
+      <body className={`${inter.variable} ${syne.variable} antialiased`}>
         {children}
       </body>
     </html>

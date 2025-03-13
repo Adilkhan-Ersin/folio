@@ -76,12 +76,12 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className='flex gap-5 w-full items-end justify-between md:grid md:grid-cols-12'>
-        <span className='flex flex-col text-[2.5rem] font-bold leading-tight tracking-[-0.025em] text-[var(--black-color)] sm:order-first sm:text-[1.5rem] md:col-span-6'>
+      <div className='flex gap-5 w-full items-end justify-between lg:grid lg:grid-cols-12'>
+        <span className='flex flex-col text-[1.7rem] lg:text-[2.5rem] font-bold leading-tight tracking-[-0.025em] text-[var(--black-color)] sm:order-first sm:text-[1.5rem] md:col-span-6'>
           <span>© 2025 Ersin Adilkhan</span>
           <span>All Rights Reserved</span>
         </span>
-        <div className='h-fit w-full justify-end md:col-span-6 md:flex'>
+        <div className='lg:h-fit lg:w-full justify-end md:col-span-6 md:flex'>
           <div className='w-fit'>
             <Button aria-label='Scroll to top' onClickThug={scrollToTop} icon={<FaArrowUp className='text-[var(--white-color)] w-[2rem] h-[2rem]' />} containerClass='group relative flex w-fit flex-col items-center justify-center rounded-full overflow-hidden bg-[var(--black-color)] p-[2rem] duration-1000 ease-expo hover:scale-90 md:flex'></Button>
           </div>

@@ -1,6 +1,6 @@
 // components/Hero.tsx
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -47,6 +47,7 @@ export default function Projects() {
   const setCurrentIndex = useRef(0);
   const numbersRef = useRef(null);
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   const works = [
     { title: "Utopia", secondTitle: "Poster Design", image: "/img/utopia.png", link: "/projects", tag: "Design", },
@@ -55,12 +56,18 @@ export default function Projects() {
     { title: "Paper Ice", secondTitle: "PFP", image: "/img/paperIce.png", link: "/projects", tag: "Design", },
     { title: "Ice OG", secondTitle: "Digital Art", image: "/img/ice.png", link: "/projects", tag: "Design", },
   ]
+  useEffect(() => {
+    const checkIfMobile = () => setIsMobile(window.innerWidth <= 800);
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
 
   useGSAP(() => {
-    if (!numbersRef.current || containerRef.current.length <= 1) return;
+    if (isMobile || !numbersRef.current || containerRef.current.length <= 1) return;
     
     containerRef.current.forEach((container, index) => {
-      if (index === 0) return; // Skip for the first container as we start with 1 visible
+      if (!container || index === 0) return; // Skip for the first container as we start with 1 visible
       
       ScrollTrigger.create({
         trigger: container,
@@ -88,15 +95,15 @@ export default function Projects() {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <section className="project-section" id='projects'>
-      <div className="flex flex-col gap-y-2">
-        <h2 className="text-[var(--pr-color)] text-[4.375vw]">Selected Works</h2>
+      <div className="flex flex-col">
+        <h2 className="text-[var(--pr-color)] text-5xl lg:text-[4.375vw]">Selected Works</h2>
       </div>
       <div className="grid grid-cols-12 h-full pt-5 gap-[2.5vw]">
-        <div  className="sticky top-12 col-span-5 h-fit w-full overflow-hidden text-[20vw]  leading-[0.9] flex">
+        <div  className="numbers sticky top-12 col-span-5 h-fit w-full overflow-hidden text-[20vw] leading-[0.9] flex">
           <span className="relative">0</span>
           <div className="relative">
             <div ref={numbersRef} className="absolute flex h-full w-fit flex-col transition-all duration-1000 ease-in-out-cubic" style={{ transform: 'translateY(0%)' }}>
@@ -108,11 +115,11 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <aside className="relative col-span-7 flex flex-col gap-y-2">
+        <aside className="relative col-span-12 lg:col-span-7 flex flex-col gap-y-2">
           {works.map((work, index) => (
-            <div key={index} ref={(el) => { containerRef.current[index] = el; }} className="@container containers min-h-[80vh] pb-5">
+            <div key={index} ref={(el) => { containerRef.current[index] = el; }} className="@container containers lg:min-h-[80vh] pb-10 lg:pb-5">
               <Link href={work.link}>
-                <BentoTilt className="relative transition-transform duration-300 ease-out flex aspect-square items-center justify-center overflow-clip rounded-md p-3">
+                <BentoTilt className="relative transition-transform duration-300 ease-out flex aspect-[4/5] lg:aspect-square items-center justify-center overflow-clip rounded-md p-3">
                   <Image className='absolute h-full w-full object-cover' src={work.image} alt="poster" width={1309} height={1000} />
                 </BentoTilt>
                 <div className="flex justify-between gap-2 pt-4">
@@ -120,7 +127,7 @@ export default function Projects() {
                     <span className="font-mono text-sm font-medium">{work.secondTitle}</span>
                     <h3 className="w-fit text-4xl font-semibold">{work.title}</h3>
                   </div>
-                  <div className="flex items-end gap-2 tracking-[0]">
+                  <div className="flex items-start lg:items-end gap-2 tracking-[0]">
                     <span className="tag">{work.tag}</span>
                     <span className="tag">Development</span>
                     <span className="tag">2024</span>

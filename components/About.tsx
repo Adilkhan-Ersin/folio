@@ -31,23 +31,23 @@ export default function About() {
   });
 
   return (
-    <section className="clipAnima pb-[2.7vw] flex flex-col gap-5 rounded-b-3xl bg-[var(--black-color)]" id='about'>
-      <div className='custom-grid'>
-        <MdArrowOutward size={90} className="p-0 m-0" rotate={180} color='var(--second-color)'/>
-        <h2 className='section-heading col-start-6 relative z-30 col-span-full flex w-full flex-col leading-none mix-blend-exclusion text-[var(--second-color)]'>
+    <section className="clipAnima pb-[65px] lg:pb-[2.7vw] flex flex-col gap-5 rounded-b-3xl bg-[var(--black-color)]" id='about'>
+      <div className='custom-grid pb-6 lg:pb-10'>
+        <MdArrowOutward size={90} className="hidden lg:block p-0 m-0" rotate={180} color='var(--second-color)'/>
+        <h2 className='section-heading col-start-1 lg:col-start-6 relative z-30 col-span-full flex w-full flex-col leading-none mix-blend-exclusion text-[var(--second-color)]'>
           <span>Designer,</span>
           <span>Developer,</span>
           <span>Creator</span>
         </h2>
       </div>
       <div className='custom-grid col-span-full gap-y-5'>
-        <div className='pointer-events-none relative z-0 col-span-4 flex aspect-square w-full items-center overflow-clip rounded-md'>
-          <Image src="/img/vangoh.jpg" alt="PFP" width={1024} height={1024} />
+        <div className='pointer-events-none relative z-0 col-span-12 lg:col-span-4 flex aspect-[3/4] w-full items-center overflow-clip rounded-md'>
+          <Image src="/img/vangoh.jpg" alt="PFP" width={1024} height={1024} className='h-full w-full object-cover'/>
         </div>
-        <div className='col-span-7 col-start-6 flex flex-col gap-y-5 '>
-          <p className='relative w-full max-w-[39ch] text-balance font-medium leading-snug text-[var(--second-color)] text-[1.5rem]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, pariatur deserunt! Repudiandae quidem consectetur dolore totam quasi hic nobis amet odit corrupti earum deleniti porro corporis, iste cumque vitae fugit.</p>
-          <div className='flex gap-x-20 gap-y-3'>
-            <span className='flex h-fit flex-col gap-2 overflow-clip font-mono tracking-[-0.035em]'>
+        <div className='col-span-12 lg:col-span-7 lg:col-start-6 flex flex-col gap-y-5 '>
+          <p className='relative pb-10 w-full max-w-[39ch] text-balance font-medium leading-snug text-[var(--second-color)] text-[1.2rem] lg:text-[1.5rem]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, pariatur deserunt! Repudiandae quidem consectetur dolore totam quasi hic nobis amet odit corrupti earum deleniti porro corporis, iste cumque vitae fugit.</p>
+          <div className='flex flex-col lg:flex-row gap-x-20 gap-y-5'>
+            <span className='flex h-fit lg:flex-col gap-6 overflow-clip font-mono tracking-[-0.035em]'>
               <span className='flex h-full font-medium uppercase text-nowrap text-[var(--second-color)]'>
                 (About Me)
               </span>

@@ -42,12 +42,27 @@
   }
 }
 
+@media (max-width: 750px) {
+  .numbers {
+    display: none;
+  }
+  .section-heading {
+    font-size: 3rem !important;
+  }
+  .tag {
+    font-size: 0.6rem !important;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-feature-settings: 'pnum' on, 'lnum' on;
   cursor: none;
+  /* ::-webkit-scrollbar {
+    display: none;
+  } */
 }
 
 body {
@@ -88,7 +103,7 @@ nav > div {
 }
 
 .section-heading {
-  font-size: 3.375vw;
+  font-size: 5.5vw;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -106,6 +121,21 @@ nav > div {
   border-radius: 9999px;
   border-width: 1px;
   border-color: var(--black-color);
+  padding: 3px 8px;
+  text-transform: uppercase;
+  font-family: var(--font-roboto);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.tag-black {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: var(--second-color);
   padding: 3px 8px;
   text-transform: uppercase;
   font-family: var(--font-roboto);
@@ -162,3 +192,33 @@ nav > div {
     radial-gradient(16% 51% at left ,var(--g)),
     radial-gradient(16% 51% at right,var(--g));
 } */
+
+.card {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#card-1 {
+  top: 65%;
+  left: 17%;
+}
+
+#card-2 {
+  top: 25%;
+  left: 33%;
+  z-index: -1;
+}
+
+#card-3 {
+  top: 55%;
+  left: 53%;
+}
+
+#card-4 {
+  top: 18%;
+  left: 65%;
+  z-index: -1;
+}
