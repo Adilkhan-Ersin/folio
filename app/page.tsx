@@ -1,3 +1,6 @@
+'use client';
+// import { useState, useEffect } from 'react';
+// import Preload from '@/components/Preload';
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar';
 import About from '@/components/About'
@@ -10,8 +13,17 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 export default function Home() {
+//   const [loading, setLoading] = useState(true);
+//   useEffect(() => {
+//     setTimeout(() => {
+//       setLoading(false);
+//     }
+// , 5000);
+
+//   })
   return (
     <>
+      {/* {loading && (<Preload onLoadComplete={() => setLoading(false)} />)} */}
       <CustomCursor/>
       <Navbar />
       <Hero />

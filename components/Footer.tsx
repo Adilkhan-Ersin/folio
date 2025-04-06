@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaArrowUp } from 'react-icons/fa';
 import Button from './Button';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   useEffect(() => {
@@ -74,6 +75,12 @@ export default function Footer() {
               </span>
             </a>
           ))}
+          <Link href='/mylove' target='_blank' rel='noopener noreferrer' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
+            <span className='relative inline-flex overflow-hidden'>
+              <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>Kamilya</div>
+              <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>Kamilya</div>
+            </span>
+          </Link>
         </div>
       </div>
       <div className='flex gap-5 w-full items-end justify-between lg:grid lg:grid-cols-12'>

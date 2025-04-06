@@ -45,7 +45,7 @@ export default function About() {
           <Image src="/img/vangoh.jpg" alt="PFP" width={1024} height={1024} className='h-full w-full object-cover'/>
         </div>
         <div className='col-span-12 lg:col-span-7 lg:col-start-6 flex flex-col gap-y-5 '>
-          <p className='relative pb-10 w-full max-w-[39ch] text-balance font-medium leading-snug text-[var(--second-color)] text-[1.2rem] lg:text-[1.5rem]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, pariatur deserunt! Repudiandae quidem consectetur dolore totam quasi hic nobis amet odit corrupti earum deleniti porro corporis, iste cumque vitae fugit.</p>
+          <p className='relative pb-10 w-full max-w-[44ch] text-balance font-medium leading-snug text-[var(--second-color)] text-[1.2rem] lg:text-[1.5rem]'>I’m passionate about design and development, taking projects from idea to launch while making sure they’re smooth, functional, and leave a real impact. My goal is to create web experiences that not only look great but feel great to use.</p>
           <div className='flex flex-col lg:flex-row gap-x-20 gap-y-5'>
             <span className='flex h-fit lg:flex-col gap-6 overflow-clip font-mono tracking-[-0.035em]'>
               <span className='flex h-full font-medium uppercase text-nowrap text-[var(--second-color)]'>
@@ -54,10 +54,10 @@ export default function About() {
               <Link href='/certificates' className='tag !border-[var(--second-color)] text-[var(--second-color)]'>Certificates</Link>
             </span>
             <p className='flex w-full max-w-[38ch] flex-col text-balance text-base font-medium leading-[132.5%] text-[var(--second-color)]'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat pariatur a deserunt nam debitis, ipsum consequuntur corporis ratione. 
+              I pay close attention to detail and always focus on user-friendly design. Every project I work on is built with a thoughtful approach to ensure the best experience possible. 
               <br />
               <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat pariatur a deserunt nam debitis, ipsum consequuntur corporis ratione.
+              When I’m not coding or designing, I’m usually exploring new ideas, playing video games, listening to music, or working on creative projects.
             </p>
           </div>
         </div>

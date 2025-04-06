@@ -1,51 +1,46 @@
+//https://cdn.dribbble.com/userupload/11736946/file/original-2d1a1b890a968d1e37dca748a3465312.mp4
 'use client'
 import dynamic from 'next/dynamic';
-import { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from 'next/link';
 import Navbar from '@/components/Navbar';
+import Image from 'next/image';
 
 const CustomCursor = dynamic(() => import('@/components/CustomCursor'), {
   ssr: false
 });
 
 export default function Certifications() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') { // Ensure it only runs on the client
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.to('.title-gsp', {
-        scrollTrigger: {
-          trigger: '.header',
-          start: 'top top',
-          scrub: 1.9
-        },
-        xPercent: -80
-      });
-
-      gsap.to('.header .stroketx', {
-        scrollTrigger: {
-          trigger: '.header',
-          start: 'top top',
-          scrub: 1.9
-        },
-        xPercent: 80
-      });
-    }
-  }, []);
-
+  const certificates = [
+    {
+      name: 'CS50P',
+      image: '/sertificates/CS50P.png',
+      width: 2246,
+      height: 1588
+    },
+    {
+      name: 'CS50W',
+      image: '/sertificates/CS50W.png',
+      width: 2246,
+      height: 1588
+    },
+    {
+      name: 'Google',
+      image: '/sertificates/Google.png',
+      width: 3000,
+      height: 2550
+    },
+  ]
+    
   return (
     <>
       <CustomCursor />
       <Navbar />
-      <section className="header overflow-hidden relative flex justify-center items-center w-full h-[100vh] font-[Syne]" id='hero'>
-        <h1 className='title relative m-0 text-[4.375vw] text-center uppercase mix-blend-difference leading-[1.1] text-[var(--second-color)] z-[2]'>
-          <span className='title-gsp inline-block will-change-transform'>Fuck</span>
-          <Link href='/' className='stroketx'>You</Link>
-        </h1>
+      <section className="w-screen h-screen flex flex-col items-center  gap-10" id='hero'>
+        {certificates.map((certificate, index) => (
+          <div key={index} className='w-[65%] flex items-center'>
+            <Image src={certificate.image} alt={certificate.name} width={certificate.width} height={certificate.height} className='w-full h-full object-cover' />
+          </div>
+        ))}
       </section>
-      <div className='h-screen w-screen'></div>
     </>
   );
 }
