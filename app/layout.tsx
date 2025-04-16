@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Syne, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-
-const syne = Syne({
-  weight: '800',
-  subsets: ["latin"],
-  variable: "--font-syne",
-});
 
 // const roboto = Roboto({
 //   weight: ['100', '300', '400', '500', '700', '900'],
@@ -23,8 +17,26 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Adilkhan Ersin",
-  description: "Adilkhan Ersin's personal portfolio website",
+  title: "A. E. | Web Developer Portfolio",
+  description: "Portfolio of Adilkhan Ersin – showcasing web development, design, and programming projects.",
+  keywords: "web developer, portfolio, projects, web design, programming, Adilkhan Ersin, Adok",
+  openGraph: {
+    title: "A. E. | Web Developer Portfolio",
+    description: "Portfolio of Adilkhan Ersin – showcasing web development, design, and programming projects.",
+    url: "https://ersinadilkhan.vercel.app/",
+    siteName: "A. E. | Web Developer Portfolio",
+    images: [
+      {
+        url: "/paperIce.png",
+        width: 1024,
+        height: 1024,
+        alt: "Paper Ice",
+        type: "image/png",
+      },
+    ],
+    locale: "en_US, en, ru_RU, ru, kk_KZ, kk",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -34,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${syne.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`}>
         {children}
       </body>
     </html>

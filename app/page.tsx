@@ -1,6 +1,6 @@
 'use client';
-// import { useState, useEffect } from 'react';
-// import Preload from '@/components/Preload';
+import { useState, useEffect } from 'react';
+import Preloader from '@/components/Preloader'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar';
 import About from '@/components/About'
@@ -9,21 +9,20 @@ import Footer from '@/components/Footer'
 import CustomCursor from '@/components/CustomCursor';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-// import Certifications from '@/components/Certifications'
-
 
 export default function Home() {
-//   const [loading, setLoading] = useState(true);
-//   useEffect(() => {
-//     setTimeout(() => {
-//       setLoading(false);
-//     }
-// , 5000);
+  const [isLoading, setIsLoading] = useState(true);
 
-//   })
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+      window.scrollTo(0, 0);
+    }, 3000);
+  }, []);
+
   return (
-    <>
-      {/* {loading && (<Preload onLoadComplete={() => setLoading(false)} />)} */}
+    <main>
+      { isLoading && <Preloader />}
       <CustomCursor/>
       <Navbar />
       <Hero />
@@ -32,9 +31,6 @@ export default function Home() {
       <Footer />
       <Analytics />
       <SpeedInsights />
-      {/* 
-      <Skills />
-      <Certifications /> */}
-    </>
+    </main>
   );
 }

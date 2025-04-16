@@ -10,16 +10,14 @@
 :root {
   /* --background: #ffffff;
   --foreground: #171717; */
-  --pr-color: #150a06;
   --second-color: #fdf7f4;
   --matte-color: #fd7f52;
-  --green-color: #52fd7f;
   --cubicbz: cubic-bezier(0.9, 0, 1, 1);
   --fz-big: 60px;
   --p-size: 14px;
   --background: #fff5ed;
   --alt-green-color: #9cee69;
-  --black-color: #191919;
+  --black-color: #0c0c0c;
   --white-color: #ffffff;
 }
 
@@ -27,16 +25,14 @@
   :root {
     /* --background: #0a0a0a;
     --foreground: #ededed; */
-    --pr-color: #150a06;
     --second-color: #fdf7f4;
     --matte-color: #fd7f52;
-    --green-color: #52fd7f;
     --cubicbz: cubic-bezier(0.9, 0, 1, 1);
     --fz-big: 60px;
     --p-size: 14px;
     --background: #fff5ed;
     --alt-green-color: #9cee69;
-    --black-color: #191919;
+    --black-color: #0c0c0c;
     --white-color: #ffffff;
     --btn-bg: rgba(255, 255, 255, 0);
   }
@@ -86,12 +82,6 @@ section {
 
 nav > div {
   flex: 1;
-}
-
-.title .stroketx {
-  display: inline-block;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--second-color);
 }
 
 .ease-in-out-cubic {
@@ -221,4 +211,9 @@ nav > div {
   top: 18%;
   left: 65%;
   z-index: -1;
+}
+
+.hero {
+  clip-path: polygon(0% 45%, 0% 45%, 0% 55%, 0% 55%);
+  will-change: clip-path;
 }

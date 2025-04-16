@@ -92,10 +92,10 @@ const Navbar = () => {
         <div className='text-center text-lg font-[Canopee] lg:text-2xl'>
           <p>Adok</p>
         </div>
-        <div className='text-center text-[22px] font-[Canopee] lg:text-4xl'>
+        <div className='text-center text-[21px] font-[Canopee] lg:text-4xl'>
           <p><Link href='/'>The Portfolio</Link></p>
         </div>
-        <div className='flex justify-end'>
+        <div className='flex justify-end pr-2 md:pr-6'>
           <button ref={menuRef} onClick={toggleMenu} 
             className='flex justify-center items-center w-7 h-5 py-7 px-10 border-none outline-none'
             >
@@ -120,7 +120,7 @@ const Navbar = () => {
               href={item.href}
               onClick={toggleMenu}
               className='menu-item [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] relative text-center font-[Canopee] text-8xl lg:text-[260px] leading-[80%] text-[var(--second-color)] transform-gpu'>
-                <p className='hover-text tracking-normal transition-[letter-spacing] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:tracking-[21px]'>{item.name}</p>
+                <p className='hover-text tracking-normal transition-[letter-spacing] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:tracking-[16px] md:hover:tracking-[21px]'>{item.name}</p>
               </Link>
             ))}
         </div>

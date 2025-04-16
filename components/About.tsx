@@ -6,34 +6,36 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function About() {
   useEffect(() => {
     gsap.registerPlugin(useGSAP, ScrollTrigger);
   }, []);
 
+  const sectionRef = useRef(null);
+
   useGSAP(() => {
-    const shrinkingAnimation = gsap.timeline({
+    gsap.to(sectionRef.current, { // Target the section ref
+      scale: 0.95,
+      borderRadius: '0 0 2rem 2rem', // GSAP can animate border radius
+      ease: 'power1.inOut',
       scrollTrigger: {
-        trigger: '.clipAnima',
-        start: 'bottom bottom',
-        end: '+=30%',
-        scrub: 0.5,
+          trigger: sectionRef.current, // Use the section ref
+          start: 'bottom bottom', // When bottom of section hits bottom of viewport
+          end: '+=30%', // End after scrolling 30% past the start point
+          scrub: 0.5,
+          // markers: true, // Uncomment for debugging
       },
     });
-
-    shrinkingAnimation.to('.clipAnima', {
-      scale: 0.95,
-      borderRadius: '0 0 2rem 2rem',
-      ease: 'power1.inOut',
-    });
-  });
+  }, { scope: sectionRef });
 
   return (
-    <section className="clipAnima pb-[65px] lg:pb-[2.7vw] flex flex-col gap-5 rounded-b-3xl bg-[var(--black-color)]" id='about'>
+    <section ref={sectionRef} className="clipAnima pb-[65px] lg:pb-[2.7vw] flex flex-col gap-5 rounded-b-3xl bg-[var(--black-color)]" id='about'>
       <div className='custom-grid pb-6 lg:pb-10'>
-        <MdArrowOutward size={90} className="hidden lg:block p-0 m-0" rotate={180} color='var(--second-color)'/>
+        <div className='w-[90px] h-[90px]' style={{ transform: 'rotate(0deg)' }}>
+          <MdArrowOutward size={90} className="lg:block p-0 m-0" color='var(--second-color)'/>
+        </div>
         <h2 className='section-heading col-start-1 lg:col-start-6 relative z-30 col-span-full flex w-full flex-col leading-none mix-blend-exclusion text-[var(--second-color)]'>
           <span>Designer,</span>
           <span>Developer,</span>

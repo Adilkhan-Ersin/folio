@@ -29,8 +29,8 @@ export default function Footer() {
 
   const resources = [
     { name: 'Privacy Policy', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
-    { name: 'Terms & Conditions', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
-    { name: 'Berkut loh', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
+    { name: 'Dastan', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
+    { name: 'Berkut', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
   ]
 
   const scrollToTop = () => {
@@ -41,56 +41,58 @@ export default function Footer() {
   });
 
   return (
-    <footer className="footer-padding relative flex flex-col items-center justify-center gap-y-5" id='contact'>
-      <div className='grid gap-5 w-full grid-cols-2 gap-y-5 text-base md:grid-cols-12'>
-        <div className='flex flex-col md:col-span-6'>
-          <h3 className='mb-3 flex border-b-[1.5px] border-[var(--black-color)] pb-2 font-bold tracking-[0] '>Menu</h3>
-          {menu.map((item, index) => (
-            <a key={index} href={item.href} className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
+    <footer style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}} className="h-[440px] md:h-[310px] lg:h-[350px] footer-padding relative flex flex-col items-center justify-center gap-y-5" id='contact'>
+      <div className='fixed bottom-0 h-[440px] md:h-[310px] lg:h-[350px] w-[100%] footer-padding'>
+        <div className='grid gap-5 w-full grid-cols-2 gap-y-5 text-base md:grid-cols-12'>
+          <div className='flex flex-col md:col-span-6'>
+            <h3 className='mb-3 flex border-b-[1.5px] border-[var(--black-color)] pb-2 font-bold tracking-[0] '>Menu</h3>
+            {menu.map((item, index) => (
+              <a key={index} href={item.href} className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
+                <span className='relative inline-flex overflow-hidden'>
+                  <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>{item.name}</div>
+                  <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>{item.name}</div>
+                </span>
+              </a>
+            ))}
+          </div>
+          <div className='flex flex-col md:col-span-3'>
+            <h3 className='mb-3 flex border-b-[1.5px] border-[var(--black-color)] pb-2 font-bold tracking-[0] '>Social</h3>
+            {social.map((item, index) => (
+              <a key={index} href={item.href} target='_blank' rel='noopener noreferrer' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
+                <span className='relative inline-flex overflow-hidden'>
+                  <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>{item.name}</div>
+                  <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>{item.name}</div>
+                </span>
+              </a>
+            ))}
+          </div>
+          <div className='col-span-2 flex flex-col md:col-span-3'>
+            <h3 className='mb-3 flex border-b-[1.5px] border-[var(--black-color)] pb-2 font-bold tracking-[0] '>Resources</h3>
+            {resources.map((item, index) => (
+              <a key={index} href={item.href} target='_blank' rel='noopener noreferrer' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
+                <span className='relative inline-flex overflow-hidden'>
+                  <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>{item.name}</div>
+                  <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>{item.name}</div>
+                </span>
+              </a>
+            ))}
+            <Link href='/mylove' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
               <span className='relative inline-flex overflow-hidden'>
-                <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>{item.name}</div>
-                <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>{item.name}</div>
+                <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>Kamilya</div>
+                <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>Kamilya</div>
               </span>
-            </a>
-          ))}
+            </Link>
+          </div>
         </div>
-        <div className='flex flex-col md:col-span-3'>
-          <h3 className='mb-3 flex border-b-[1.5px] border-[var(--black-color)] pb-2 font-bold tracking-[0] '>Social</h3>
-          {social.map((item, index) => (
-            <a key={index} href={item.href} target='_blank' rel='noopener noreferrer' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
-              <span className='relative inline-flex overflow-hidden'>
-                <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>{item.name}</div>
-                <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>{item.name}</div>
-              </span>
-            </a>
-          ))}
-        </div>
-        <div className='col-span-2 flex flex-col md:col-span-3'>
-          <h3 className='mb-3 flex border-b-[1.5px] border-[var(--black-color)] pb-2 font-bold tracking-[0] '>Resources</h3>
-          {resources.map((item, index) => (
-            <a key={index} href={item.href} target='_blank' rel='noopener noreferrer' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
-              <span className='relative inline-flex overflow-hidden'>
-                <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>{item.name}</div>
-                <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>{item.name}</div>
-              </span>
-            </a>
-          ))}
-          <Link href='/mylove' target='_blank' rel='noopener noreferrer' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
-            <span className='relative inline-flex overflow-hidden'>
-              <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>Kamilya</div>
-              <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>Kamilya</div>
-            </span>
-          </Link>
-        </div>
-      </div>
-      <div className='flex gap-5 w-full items-end justify-between lg:grid lg:grid-cols-12'>
-        <span className='flex flex-col text-[1.7rem] lg:text-[2.5rem] font-bold leading-tight tracking-[-0.025em] text-[var(--black-color)] sm:order-first sm:text-[1.5rem] md:col-span-6'>
-          <span>© 2025 Ersin Adilkhan</span>
-          <span>All Rights Reserved</span>
-        </span>
-        <div className='lg:h-fit lg:w-full justify-end md:col-span-6 md:flex'>
-          <div className='w-fit'>
-            <Button aria-label='Scroll to top' onClickThug={scrollToTop} icon={<FaArrowUp className='text-[var(--white-color)] w-[2rem] h-[2rem]' />} containerClass='group relative flex w-fit flex-col items-center justify-center rounded-full overflow-hidden bg-[var(--black-color)] p-[2rem] duration-1000 ease-expo hover:scale-90 md:flex'></Button>
+        <div className='flex gap-5 w-full items-end justify-between lg:grid lg:grid-cols-12'>
+          <span className='flex flex-col text-[1.7rem] lg:text-[2.5rem] font-bold leading-tight tracking-[-0.025em] text-[var(--black-color)] sm:order-first sm:text-[1.5rem] md:col-span-6'>
+            <span>© 2025 Ersin Adilkhan</span>
+            <span>All Rights Reserved</span>
+          </span>
+          <div className='lg:h-fit lg:w-full justify-end md:col-span-6 md:flex'>
+            <div className='w-fit'>
+              <Button aria-label='Scroll to top' onClickThug={scrollToTop} icon={<FaArrowUp className='text-[var(--white-color)] w-[2rem] h-[2rem]' />} containerClass='group relative flex w-fit flex-col items-center justify-center rounded-full overflow-hidden bg-[var(--black-color)] p-[2rem] duration-1000 ease-expo hover:scale-90 md:flex'></Button>
+            </div>
           </div>
         </div>
       </div>
