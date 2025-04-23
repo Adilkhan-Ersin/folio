@@ -11,14 +11,11 @@
   /* --background: #ffffff;
   --foreground: #171717; */
   --second-color: #fdf7f4;
-  --matte-color: #fd7f52;
   --cubicbz: cubic-bezier(0.9, 0, 1, 1);
   --fz-big: 60px;
   --p-size: 14px;
   --background: #fff5ed;
-  --alt-green-color: #9cee69;
   --black-color: #0c0c0c;
-  --white-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,14 +23,11 @@
     /* --background: #0a0a0a;
     --foreground: #ededed; */
     --second-color: #fdf7f4;
-    --matte-color: #fd7f52;
     --cubicbz: cubic-bezier(0.9, 0, 1, 1);
     --fz-big: 60px;
     --p-size: 14px;
     --background: #fff5ed;
-    --alt-green-color: #9cee69;
     --black-color: #0c0c0c;
-    --white-color: #ffffff;
     --btn-bg: rgba(255, 255, 255, 0);
   }
 }
@@ -78,6 +72,16 @@ section {
   padding-bottom: 1.9vw;
   padding-right: 2.734vw;
   padding-left: 2.734vw;
+}
+
+.preloader-svg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100% + 300px);
+  path{
+    fill: var(--black-color);
+  }
 }
 
 nav > div {

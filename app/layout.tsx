@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "A. E. | Web Developer Portfolio",
     images: [
       {
-        url: "/paperIce.png",
+        url: "https://ersinadilkhan.vercel.app/img/paperIce.png",
         width: 1024,
         height: 1024,
         alt: "Paper Ice",
@@ -39,11 +39,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children}: Readonly<{ children: React.ReactNode; }>){
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>

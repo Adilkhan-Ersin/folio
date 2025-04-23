@@ -28,9 +28,9 @@ export default function Footer() {
   ]
 
   const resources = [
-    { name: 'Privacy Policy', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
-    { name: 'Dastan', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
-    { name: 'Berkut', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
+    { name: 'Coming Soon', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
+    { name: 'Coming Soon', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
+    { name: 'Coming Soon', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
   ]
 
   const scrollToTop = () => {
@@ -78,8 +78,8 @@ export default function Footer() {
             ))}
             <Link href='/mylove' className="group pb-1 relative flex h-fit w-fit overflow-hidden font-medium ">
               <span className='relative inline-flex overflow-hidden'>
-                <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>Kamilya</div>
-                <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>Kamilya</div>
+                <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>Egg</div>
+                <div className='absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>Egg</div>
               </span>
             </Link>
           </div>

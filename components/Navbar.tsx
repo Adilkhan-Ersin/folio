@@ -112,7 +112,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div ref={overlay} className={'fixed top-0 left-0 w-screen h-screen flex bg-[var(--matte-color)] z-10 [clip-path:polygon(0_0,100%_0,100%_0,0_0)]'}>
+      <div ref={overlay} className={'fixed top-0 left-0 w-screen h-screen flex bg-[var(--black-color)] z-10 [clip-path:polygon(0_0,100%_0,100%_0,0_0)]'}>
         <div className='fixed top-0 left-0 w-screen h-screen flex gap-3 lg:gap-4 flex-col justify-center items-center'>
             {navigation.map((item) => (
               <Link 

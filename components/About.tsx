@@ -44,7 +44,7 @@ export default function About() {
       </div>
       <div className='custom-grid col-span-full gap-y-5'>
         <div className='pointer-events-none relative z-0 col-span-12 lg:col-span-4 flex aspect-[3/4] w-full items-center overflow-clip rounded-md'>
-          <Image src="/img/vangoh.jpg" alt="PFP" width={1024} height={1024} className='h-full w-full object-cover'/>
+          <Image src="/img/adoknitted.png" alt="PFP" width={1024} height={1024} className='h-full w-full object-cover'/>
         </div>
         <div className='col-span-12 lg:col-span-7 lg:col-start-6 flex flex-col gap-y-5 '>
           <p className='relative pb-10 w-full max-w-[44ch] text-balance font-medium leading-snug text-[var(--second-color)] text-[1.2rem] lg:text-[1.5rem]'>I’m passionate about design and development, taking projects from idea to launch while making sure they’re smooth, functional, and leave a real impact. My goal is to create web experiences that not only look great but feel great to use.</p>

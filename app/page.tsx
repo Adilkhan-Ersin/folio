@@ -9,20 +9,29 @@ import Footer from '@/components/Footer'
 import CustomCursor from '@/components/CustomCursor';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-      window.scrollTo(0, 0);
-    }, 3000);
+    ( async () => {
+        const LocomotiveScroll = (await import('locomotive-scroll')).default;
+        new LocomotiveScroll();
+
+        setTimeout(() => {
+          setIsLoading(false);
+          window.scrollTo(0, 0);
+        }, 3000);
+      }
+    )()
   }, []);
 
   return (
     <main>
-      { isLoading && <Preloader />}
+      <AnimatePresence mode='wait'>
+        {isLoading && <Preloader />}
+      </AnimatePresence>
       <CustomCursor/>
       <Navbar />
       <Hero />
