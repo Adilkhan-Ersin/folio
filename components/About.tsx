@@ -5,7 +5,6 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md';
-import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
 export default function About() {
@@ -53,7 +52,6 @@ export default function About() {
               <span className='flex h-full font-medium uppercase text-nowrap text-[var(--second-color)]'>
                 (About Me)
               </span>
-              <Link href='/certificates' className='tag !border-[var(--second-color)] text-[var(--second-color)]'>Certificates</Link>
             </span>
             <p className='flex w-full max-w-[38ch] flex-col text-balance text-base font-medium leading-[132.5%] text-[var(--second-color)]'>
               I pay close attention to detail and always focus on user-friendly design. Every project I work on is built with a thoughtful approach to ensure the best experience possible. 

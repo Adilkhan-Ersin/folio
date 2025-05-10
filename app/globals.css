@@ -54,7 +54,9 @@
     display: none;
   } */
 }
-
+button {
+  cursor: none;
+}
 body {
   color: var(--black-color);
   background: var(--background);
@@ -187,37 +189,36 @@ nav > div {
     radial-gradient(16% 51% at right,var(--g));
 } */
 
-.card {
-  position: absolute;
-  width: 300px;
-  height: 400px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-#card-1 {
-  top: 65%;
-  left: 17%;
-}
-
-#card-2 {
-  top: 25%;
-  left: 33%;
-  z-index: -1;
-}
-
-#card-3 {
-  top: 55%;
-  left: 53%;
-}
-
-#card-4 {
-  top: 18%;
-  left: 65%;
-  z-index: -1;
-}
-
 .hero {
   clip-path: polygon(0% 45%, 0% 45%, 0% 55%, 0% 55%);
   will-change: clip-path;
+}
+/* noise moving */
+/* @keyframes noise {
+  0% { transform: translate3d(1%,-1%,0) }
+  10% { transform: translate3d(-5%,-2%,0) }
+  20% { transform: translate3d(10%,5%,0) }
+  30% { transform: translate3d(5%,-11%,0) }
+  40% { transform: translate3d(-12%,-5%,0) }
+  50% { transform: translate3d(10%,9%,0) }
+  60% { transform: translate3d(15%,0,0) }
+  70% { transform: translate3d(-10%,8%,0) }
+  80% { transform: translate3d(10%,2%,0) }
+  90% { transform: translate3d(1%,5%,0) }
+  100% { transform: translate3d(0,8%,0) }
+} */
+
+.noise {
+  position: fixed;
+  background: url('/img/noise.png');
+  opacity: 1;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  top: -50%;
+  pointer-events: none;
+  will-change: auto;
+  mix-blend-mode: multiply;
+  z-index: 10;
+  animation: noise 1.2s steps(3) infinite both;
 }

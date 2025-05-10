@@ -29,6 +29,7 @@ export default function Home() {
 
   return (
     <main>
+      <span className='noise z-[1000]'></span>
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>

@@ -23,12 +23,12 @@ export default function Hero() {
         </div>
         <div className="mt-[44px] md:mt-[14vh] flex flex-col md:flex-row justify-between relative">
           <div className="text-justify max-w-[211px] flex">
-            <p className="uppercase text-sm leading-[1]">I help companies, brands and entrepreneurs develop any digital
+            <p className="uppercase text-sm md:text-base leading-[1]">I help companies, brands and entrepreneurs develop any digital
             products and achieve their goals</p>
           </div>
           <div className="mt-[19.4vh] mb-11 text-right text-[10vh]">
             <h1 className='relative uppercase mix-blend-difference leading-[0.8] text-[var(--second-color)] z-[2]'>
-              <span className='inline-block relative '>Digital</span><br/>
+              <span className='inline-block relative font-[canopee]'>Digital</span><br/>
               <span className='inline-block relative font-[canopee]'>Creator</span>
             </h1>
           </div>

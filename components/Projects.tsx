@@ -50,11 +50,10 @@ export default function Projects() {
   const [isMobile, setIsMobile] = useState(false);
 
   const works = [
-    { title: "Utopia", secondTitle: "Poster Design", image: "/img/utopia.png", link: "/projects", tag: "Design", },
-    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/theweeknd.png", link: "/projects", tag: "Design", },
-    { title: "Greg", secondTitle: "Poster Design", image: "/img/grok.png", link: "/projects", tag: "Design", },
-    { title: "Paper Ice", secondTitle: "PFP", image: "/img/paperIce.png", link: "/projects", tag: "Design", },
-    { title: "Ice OG", secondTitle: "Digital Art", image: "/img/ice.png", link: "/projects", tag: "Design", },
+    { title: "Utopia", secondTitle: "Poster Design", image: "/img/utopia.png", link: "/projects", tag: "Design", tag2: "Music"},
+    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/theweeknd.png", link: "/projects", tag: "Design", tag2: "Music"},
+    { title: "Paper Ice", secondTitle: "PFP", image: "/img/paperIce.png", link: "/projects", tag: "Design", tag2: "Edit"},
+    { title: "Ice OG", secondTitle: "Digital Art", image: "/img/ice.png", link: "/projects", tag: "Design", tag2: "Art"},
   ]
   useEffect(() => {
     const checkIfMobile = () => setIsMobile(window.innerWidth <= 800);
@@ -111,7 +110,6 @@ export default function Projects() {
               <span className="inline-block">2.</span>
               <span className="inline-block">3.</span>
               <span className="inline-block">4.</span>
-              <span className="inline-block">5.</span>
             </div>
           </div>
         </div>
@@ -129,7 +127,7 @@ export default function Projects() {
                   </div>
                   <div className="flex items-start lg:items-end gap-2 tracking-[0]">
                     <span className="tag">{work.tag}</span>
-                    <span className="tag">Development</span>
+                    <span className="tag">{work.tag2}</span>
                     <span className="tag">2024</span>
                   </div>
                 </div>

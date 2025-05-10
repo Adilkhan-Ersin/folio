@@ -17,14 +17,25 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "A. E. | Web Developer Portfolio",
+  title: "Adilkhan - Portfolio",
   description: "Portfolio of Adilkhan Ersin – showcasing web development, design, and programming projects.",
   keywords: "web developer, portfolio, projects, web design, programming, Adilkhan Ersin, Adok",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' },
+    ],
+  },
+  manifest: "/manifest.json",
   openGraph: {
-    title: "A. E. | Web Developer Portfolio",
+    title: "Adilkhan - Portfolio",
     description: "Portfolio of Adilkhan Ersin – showcasing web development, design, and programming projects.",
     url: "https://ersinadilkhan.vercel.app/",
-    siteName: "A. E. | Web Developer Portfolio",
+    siteName: "Adilkhan - Portfolio",
     images: [
       {
         url: "https://ersinadilkhan.vercel.app/img/paperIce.png",
@@ -42,6 +53,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children}: Readonly<{ children: React.ReactNode; }>){
   return (
     <html lang="en">
+      <head><meta name="apple-mobile-web-app-title" content="Adilkhan" /></head>
       <body className={`${inter.variable} antialiased`}>
         {children}
       </body>
