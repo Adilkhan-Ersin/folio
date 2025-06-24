@@ -50,11 +50,12 @@ export default function Projects() {
   const [isMobile, setIsMobile] = useState(false);
 
   const works = [
-    { title: "Utopia", secondTitle: "Poster Design", image: "/img/utopia.png", link: "/projects", tag: "Design", tag2: "Music"},
-    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/theweeknd.png", link: "/projects", tag: "Design", tag2: "Music"},
-    { title: "Paper Ice", secondTitle: "PFP", image: "/img/paperIce.png", link: "/projects", tag: "Design", tag2: "Edit"},
-    { title: "Ice OG", secondTitle: "Digital Art", image: "/img/ice.png", link: "/projects", tag: "Design", tag2: "Art"},
-  ]
+    { title: "Happy Birthday", secondTitle: "Website", image: "/img/happy.jpg", link: "https://kamilya-happy.vercel.app/", tag: "Development", tag2: "Landing Page", openInNewTab: true },
+    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/lass.png", link: "/projects", tag: "Design", tag2: "Music", openInNewTab: false },
+    { title: "Tennis Club", secondTitle: "Website", image: "/img/tennis1.jpg", link: "https://tennisdemo.webflow.io/", tag: "Development", tag2: "Landing Page", openInNewTab: true },
+    { title: "Damn", secondTitle: "Poster Design", image: "/img/damn.png", link: "/projects", tag: "Design", tag2: "Music", openInNewTab: false },
+  ];
+
   useEffect(() => {
     const checkIfMobile = () => setIsMobile(window.innerWidth <= 800);
     checkIfMobile();
@@ -103,9 +104,9 @@ export default function Projects() {
       </div>
       <div className="grid grid-cols-12 h-full pt-5 gap-[2.5vw]">
         <div  className="numbers sticky top-12 col-span-5 h-fit w-full overflow-hidden text-[20vw] leading-[0.9] flex">
-          <span className="relative">0</span>
+          <span className="relative font-[canopee]">0</span>
           <div className="relative">
-            <div ref={numbersRef} className="absolute flex h-full w-fit flex-col transition-all duration-1000 ease-in-out-cubic" style={{ transform: 'translateY(0%)' }}>
+            <div ref={numbersRef} className="absolute font-[canopee] flex h-full w-fit flex-col transition-all duration-1000 ease-in-out-cubic" style={{ transform: 'translateY(0%)' }}>
               <span className="inline-block">1.</span>
               <span className="inline-block">2.</span>
               <span className="inline-block">3.</span>
@@ -115,20 +116,22 @@ export default function Projects() {
         </div>
         <aside className="relative col-span-12 lg:col-span-7 flex flex-col gap-y-2">
           {works.map((work, index) => (
-            <div key={index} ref={(el) => { containerRef.current[index] = el; }} className="@container containers lg:min-h-[80vh] pb-10 lg:pb-5">
-              <Link href={work.link}>
+            <div key={index} ref={(el) => { containerRef.current[index] = el; }} className="@container containers lg:min-h-[80vh] pb-6 lg:pb-5">
+              <Link href={work.link} target={work.openInNewTab ? "_blank" : "_self"} rel={work.openInNewTab ? "noopener noreferrer" : ""}>
                 <BentoTilt className="relative transition-transform duration-300 ease-out flex aspect-[4/5] lg:aspect-square items-center justify-center overflow-clip rounded-md p-3">
-                  <Image className='absolute h-full w-full object-cover' src={work.image} alt="poster" width={1309} height={1000} />
+                  <Image className='absolute h-full w-full object-cover' src={work.image} alt={work.title} width={1600} height={1200} />
                 </BentoTilt>
-                <div className="flex justify-between gap-2 pt-4">
-                  <div className="flex flex-col gap-2">
-                    <span className="font-mono text-sm font-medium">{work.secondTitle}</span>
-                    <h3 className="w-fit text-4xl font-semibold">{work.title}</h3>
+                <div className="flex flex-col pt-4">
+                  <div className="flex items-center justify-between lg:items-end gap-2 tracking-[0]">
+                    <span className="font-mono text-sm lg:text-lg font-medium">{work.secondTitle}</span>
+                    <div className='flex items-center gap-2'>
+                      <span className="tag">{work.tag}</span>
+                      <span className="tag">{work.tag2}</span>
+                      <span className="tag">2024</span>
+                    </div>
                   </div>
-                  <div className="flex items-start lg:items-end gap-2 tracking-[0]">
-                    <span className="tag">{work.tag}</span>
-                    <span className="tag">{work.tag2}</span>
-                    <span className="tag">2024</span>
+                  <div className="flex w-full pt-1">
+                      <h3 className="flex text-4xl gap-2 font-semibold">{work.title}</h3>
                   </div>
                 </div>
               </Link>

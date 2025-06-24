@@ -33,12 +33,12 @@ export default function About() {
     <section ref={sectionRef} className="clipAnima pb-[65px] lg:pb-[2.7vw] flex flex-col gap-5 rounded-b-3xl bg-[var(--black-color)]" id='about'>
       <div className='custom-grid pb-6 lg:pb-10'>
         <div className='w-[90px] h-[90px]' style={{ transform: 'rotate(0deg)' }}>
-          <MdArrowOutward size={90} className="lg:block p-0 m-0" color='var(--second-color)'/>
+          <MdArrowOutward size={90} className="lg:block  p-0 m-0" color='var(--second-color)'/>
         </div>
         <h2 className='section-heading col-start-1 lg:col-start-6 relative z-30 col-span-full flex w-full flex-col leading-none mix-blend-exclusion text-[var(--second-color)]'>
-          <span>Designer,</span>
-          <span>Developer,</span>
-          <span>Creator</span>
+            <span>Designer,</span>
+            <span>Developer,</span>
+            <span>Creator</span>
         </h2>
       </div>
       <div className='custom-grid col-span-full gap-y-5'>
@@ -53,12 +53,18 @@ export default function About() {
                 (About Me)
               </span>
             </span>
-            <p className='flex w-full max-w-[38ch] flex-col text-balance text-base font-medium leading-[132.5%] text-[var(--second-color)]'>
-              I pay close attention to detail and always focus on user-friendly design. Every project I work on is built with a thoughtful approach to ensure the best experience possible. 
-              <br />
-              <br />
-              When I’m not coding or designing, I’m usually exploring new ideas, playing video games, listening to music, or working on creative projects.
-            </p>
+              {/* <p className='flex w-full max-w-[38ch] flex-col text-balance text-base font-medium leading-[132.5%] text-[var(--second-color)]'>
+                I pay close attention to detail and always focus on user-friendly design. Every project I work on is built with a thoughtful approach to ensure the best experience possible.
+                <br />
+                <br />
+                When I’m not coding or designing, I’m usually exploring new ideas, playing video games, listening to music, or working on creative projects.
+              </p> */}
+                <p className='realative w-full max-w-[38ch] text-balance text-base font-medium leading-[132.5%] text-[var(--second-color)]'>
+                  I pay close attention to detail and always focus on user-friendly design. Every project I work on is built with a thoughtful approach to ensure the best experience possible.
+                </p>
+                <p className='relative mt-5 w-full max-w-[38ch] text-balance text-base font-medium leading-[132.5%] text-[var(--second-color)]'>
+                  When I’m not coding or designing, I’m usually exploring new ideas, playing video games, listening to music, or working on creative projects.
+                </p>
           </div>
         </div>
       </div>
