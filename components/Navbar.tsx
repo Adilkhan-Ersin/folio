@@ -92,7 +92,7 @@ const Navbar = () => {
         <div className='text-center text-lg font-[Canopee] lg:text-2xl'>
           <p>Adok</p>
         </div>
-        <div className='text-center text-[21px] font-[Canopee] lg:text-4xl'>
+        <div className='text-center title-text text-[21px] font-[Canopee] lg:text-4xl'>
           <p><Link href='/'>The Portfolio</Link></p>
         </div>
         <div className='flex justify-end pr-2 md:pr-6'>
@@ -101,10 +101,10 @@ const Navbar = () => {
             >
               <div className={`
               relative w-full h-full
-              before:content-[''] before:absolute before:w-10 before:h-0.5 before:bg-[#fff5ed]
+              before:content-[''] before:absolute before:w-7 md:before:w-10 before:h-0.5 before:bg-[#fff5ed]
               before:transition-all before:duration-300 before:ease-in-out
               before:transform ${isOpen ? 'before:rotate-45 before:translate-y-0' : 'before:-translate-y-1'}
-              after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-[#fff5ed]
+              after:content-[''] after:absolute after:w-7 md:after:w-10 after:h-0.5 after:bg-[#fff5ed]
               after:transition-all after:duration-300 after:ease-in-out
               after:transform ${isOpen ? 'after:-rotate-45 after:translate-y-0' : 'after:translate-y-1'}
               `} />
@@ -119,8 +119,8 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               onClick={toggleMenu}
-              className='menu-item [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] relative text-center font-[Canopee] text-8xl lg:text-[260px] leading-[80%] text-[var(--second-color)] transform-gpu'>
-                <p className='hover-text tracking-normal transition-[letter-spacing] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:tracking-[16px] md:hover:tracking-[21px]'>{item.name}</p>
+              className='menu-item [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] relative text-center font-[Canopee] menu-text text-8xl lg:text-[260px] leading-[80%] text-[var(--second-color)] transform-gpu'>
+                <p className='hover-text tracking-normal transition-[letter-spacing] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:tracking-[8px] md:hover:tracking-[21px]'>{item.name}</p>
               </Link>
             ))}
         </div>
@@ -133,7 +133,7 @@ const Navbar = () => {
               target='_blank'
               rel='noopener noreferrer'
               onClick={toggleMenu}
-              className='font-[Canopee] text-2xl lg:text-3xl text-[var(--second-color)]'>{sosal.name}
+              className='font-[Canopee] menu-social-text text-2xl lg:text-3xl text-[var(--second-color)]'>{sosal.name}
             </Link>
           ))}
         </div>

@@ -43,6 +43,28 @@
     font-size: 0.6rem !important;
   }
 }
+@media (max-width: 390px) {
+  .title-text {
+    font-size: 19px !important;
+  }
+  .menu-text {
+    font-size: 5.3rem !important;
+  }
+  .menu-social-text {
+    font-size: 1.2rem !important;
+  }
+  .footer-text {
+    font-size: 1.5rem !important;
+  }
+  .footer-circle {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+  .footer-black {
+    padding: 1.7rem !important;
+  }
+}
+
 
 * {
   box-sizing: border-box;
