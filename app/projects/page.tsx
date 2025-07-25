@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar';
 import CustomCursor from '@/components/CustomCursor';
 
 const works = [
-  { title: "Utopia", price: "5690", image: "/img/utopia.png" },
-  { title: "Live at SOFI Stadium", price: "5690", image: "/img/theweeknd.png"},
+  { title: "DAMN.", image: "/img/posterdamn.jpg" },
+  { title: "Live at SOFI Stadium", image: "/img/posterlass.jpg"},
 ]
 
 export default function Works() {
@@ -23,11 +23,10 @@ export default function Works() {
           {works.map((work, index) => (
             <figure key={index} className="m-0 p-0 flex flex-col gap-1 overflow-hidden will-change-transform hover:scale-[0.97] transition-transform duration-500 ease-in-out">
               <div className="w-full ">
-                <Image src={work.image} alt={work.title} width={1309} height={1000} className='w-full h-full object-cover' />
+                <Image src={work.image} alt={work.title} width={4000} height={3000} className='w-full h-full object-cover' />
               </div>
               <figcaption className="flex justify-between text-base font-medium m-0 text-left" >
-                <h3 className='max-w-[135px] md:max-w-[200px]'>{work.title}</h3>
-                <p>{work.price}₸</p>
+                <h3>{work.title}</h3>
               </figcaption>
             </figure>
           ))}

@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image'
-import { MdArrowOutward } from 'react-icons/md';
 import { useEffect, useRef } from 'react';
 
 export default function About() {
@@ -31,10 +30,7 @@ export default function About() {
 
   return (
     <section ref={sectionRef} className="clipAnima pb-[65px] lg:pb-[2.7vw] flex flex-col gap-5 rounded-b-3xl bg-[var(--black-color)]" id='about'>
-      <div className='custom-grid pb-6 lg:pb-10'>
-        <div className='w-[90px] h-[90px]' style={{ transform: 'rotate(0deg)' }}>
-          <MdArrowOutward size={90} className="lg:block  p-0 m-0" color='var(--second-color)'/>
-        </div>
+      <div className='custom-grid pb-2 lg:pb-10'>
         <h2 className='section-heading col-start-1 lg:col-start-6 relative z-30 col-span-full flex w-full flex-col leading-none mix-blend-exclusion text-[var(--second-color)]'>
             <span>Designer,</span>
             <span>Developer,</span>

@@ -157,8 +157,7 @@ nav > div {
   padding: 3px 8px;
   text-transform: uppercase;
   font-family: var(--font-roboto);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 120%;
 }
 

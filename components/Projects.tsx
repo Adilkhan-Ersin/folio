@@ -51,9 +51,9 @@ export default function Projects() {
 
   const works = [
     { title: "Happy Birthday", secondTitle: "Website", image: "/img/happy.jpg", link: "https://kamilya-happy.vercel.app/", tag: "Development", tag2: "Landing Page", openInNewTab: true },
-    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/lass.png", link: "/projects", tag: "Design", tag2: "Music", openInNewTab: false },
+    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/posterlass.jpg", link: "/projects", tag: "Design", tag2: "Music", openInNewTab: false },
     { title: "Tennis Club", secondTitle: "Website", image: "/img/tennis1.jpg", link: "https://tennisdemo.webflow.io/", tag: "Development", tag2: "Landing Page", openInNewTab: true },
-    { title: "Damn", secondTitle: "Poster Design", image: "/img/damn.png", link: "/projects", tag: "Design", tag2: "Music", openInNewTab: false },
+    { title: "Damn", secondTitle: "Poster Design", image: "/img/posterdamn.jpg", link: "/projects", tag: "Design", tag2: "Music", openInNewTab: false },
   ];
 
   useEffect(() => {
@@ -116,12 +116,12 @@ export default function Projects() {
         </div>
         <aside className="relative col-span-12 lg:col-span-7 flex flex-col gap-y-2">
           {works.map((work, index) => (
-            <div key={index} ref={(el) => { containerRef.current[index] = el; }} className="@container containers lg:min-h-[80vh] pb-6 lg:pb-5">
+            <div key={index} ref={(el) => { containerRef.current[index] = el; }} className="@container containers lg:min-h-[80vh] pb-4 lg:pb-5">
               <Link href={work.link} target={work.openInNewTab ? "_blank" : "_self"} rel={work.openInNewTab ? "noopener noreferrer" : ""}>
                 <BentoTilt className="relative transition-transform duration-300 ease-out flex aspect-[4/5] lg:aspect-square items-center justify-center overflow-clip rounded-md p-3">
-                  <Image className='absolute h-full w-full object-cover' src={work.image} alt={work.title} width={1600} height={1200} />
+                  <Image className='absolute h-full w-full object-cover' src={work.image} alt={work.title} width={2000} height={1500} />
                 </BentoTilt>
-                <div className="flex flex-col pt-4">
+                <div className="flex flex-col pt-2">
                   <div className="flex items-center justify-between lg:items-end gap-2 tracking-[0]">
                     <span className="font-mono text-sm lg:text-lg font-medium">{work.secondTitle}</span>
                     <div className='flex items-center gap-2'>
@@ -130,7 +130,7 @@ export default function Projects() {
                       <span className="tag">2024</span>
                     </div>
                   </div>
-                  <div className="flex w-full pt-1">
+                  <div className="flex w-full">
                       <h3 className="flex text-4xl gap-2 font-semibold">{work.title}</h3>
                   </div>
                 </div>
