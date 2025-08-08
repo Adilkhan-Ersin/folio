@@ -2,13 +2,8 @@
 import React from 'react';
 import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 export default function Custom404() {
-  const router = useRouter(); 
-  const handleGoHome = () => {
-    router.push('/');
-  }
-
   return (
     <>
       <CustomCursor />
@@ -19,7 +14,9 @@ export default function Custom404() {
             Page Not Found
           </h1>
           <div className='flex justify-center'>
-            <button onClick={handleGoHome} className='tag-black text-[var(--second-color)] text-sm md:text-lg'>Go Home</button>
+            <Link href='/' >
+              <button className='tag-black text-[var(--second-color)] text-sm md:text-lg'>Go Home</button>
+            </Link>
           </div>
         </section>
       </div>

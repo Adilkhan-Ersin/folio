@@ -2,7 +2,7 @@
 import { useEffect, useState} from 'react';
 import { motion } from 'framer-motion';
 
-const words = ["Broke", "No Driving License", "Loading Life", "Playing Video Games", "Waiting for Saturday", "a Mess", "Single AF", "Can’t Code", "Learning"]
+const words = ["Hello", "Bonjour", "Привет", "你好", "Hola", "Ciao", "こんにちは", "안녕하세요", "Olá", "नमस्ते", "World"];
 
 export default function Preloader() {
   const [index, setIndex] = useState(0);
@@ -28,7 +28,7 @@ export default function Preloader() {
     },
     enter: {
       opacity: 0.75,
-      transition: {duration: 1, delay: 0.2}
+      transition: {duration: 0.8, delay: 0.2},
     },
   }
   const slideUp = {
@@ -55,7 +55,7 @@ export default function Preloader() {
       <motion.div variants={slideUp} initial="initial" exit="exit" className="h-screen w-screen flex items-center justify-center fixed z-[99] bg-[var(--black-color)]">
           {dimension.width > 0 && 
           <>
-              <motion.p variants={opacity} initial="initial" animate="enter" className="flex text-[var(--second-color)] text-3xl md:text-6xl items-center absolute z-[1]"><span className='mr-2'>Still</span>{words[index]}</motion.p>
+              <motion.p variants={opacity} initial="initial" animate="enter" className="flex text-[var(--second-color)] text-4xl md:text-8xl items-center absolute z-[1]">{words[index]}</motion.p>
               <svg className='preloader-svg'>
                   <motion.path variants={curve} initial="initial" exit="exit" className="fill-[var(--black-color)]"></motion.path>
               </svg>

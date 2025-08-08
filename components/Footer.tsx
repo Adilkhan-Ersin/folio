@@ -29,7 +29,7 @@ export default function Footer() {
 
   const resources = [
     { name: 'Certificates', href: '/certificates' },
-    { name: 'Coming Soon', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
+    { name: 'My Music', href: '/aboutme' },
     { name: 'Coming Soon', href: 'https://youtu.be/dQw4w9WgXcQ?si=fU7dmJga1UR4CmjU' },
   ]
 
