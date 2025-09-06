@@ -21,7 +21,7 @@ export default function Footer() {
   ]
 
   const social = [
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/adilkhan-ersin/' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/ersinadilkhan/' },
     { name: 'Instagram', href: 'https://www.instagram.com/adilikecious/' },
     { name: 'Github', href: 'https://github.com/Adilkhan-Ersin' },
     { name: 'Telegram', href: 'https://t.me/Adilkhan51' },
@@ -84,10 +84,9 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className='flex gap-5 w-full items-end justify-between lg:grid lg:grid-cols-12'>
-          <span className='flex flex-col footer-text text-[1.7rem] lg:text-[2.5rem] font-bold leading-tight tracking-[-0.025em] text-[var(--black-color)] sm:order-first sm:text-[1.5rem] md:col-span-6'>
-            <span>© 2025 Ersin Adilkhan</span>
-            <span>All Rights Reserved</span>
+        <div className='flex gap-5 w-full  items-end justify-between lg:grid lg:grid-cols-12'>
+          <span className='flex footer-text text-[16px] md:text-[24px] font-normal leading-tight text-[var(--black-color)] md:col-span-6'>
+            <span>&copy; {new Date().getFullYear()} Ersin Adilkhan. All rights reserved</span>
           </span>
           <div className='lg:h-fit lg:w-full justify-end md:col-span-6 md:flex'>
             <div className='w-fit'>

@@ -50,10 +50,11 @@ export default function Projects() {
   const [isMobile, setIsMobile] = useState(false);
 
   const works = [
-    { title: "Happy Birthday", secondTitle: "Website", image: "/img/happy.jpg", link: "https://kamilya-happy.vercel.app/", tag: "Development", tag2: "Landing Page", openInNewTab: true },
-    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/posterlass.jpg", link: "/projects", tag: "Design", tag2: "Music", openInNewTab: false },
-    { title: "Tennis Club", secondTitle: "Website", image: "/img/tennis1.jpg", link: "https://tennisdemo.webflow.io/", tag: "Development", tag2: "Landing Page", openInNewTab: true },
-    { title: "Damn", secondTitle: "Poster Design", image: "/img/posterdamn.jpg", link: "/projects", tag: "Design", tag2: "Music", openInNewTab: false },
+    { title: "LiftUp", secondTitle: "Website", image: "/img/hopecore.jpg", link: "https://liftup-hopecore.vercel.app/", tag: "Development", tag2: "Landing Page", tag3: "2025", openInNewTab: true },
+    { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/posterlass.jpg", link: "/projects", tag: "Design", tag2: "Music", tag3: "2024", openInNewTab: false },
+    { title: "Tennis Club", secondTitle: "Website", image: "/img/tennis1.jpg", link: "https://tennisdemo.webflow.io/", tag: "Development", tag2: "Landing Page", tag3: "2024", openInNewTab: true },
+    { title: "Damn", secondTitle: "Poster Design", image: "/img/posterdamn.jpg", link: "/projects", tag: "Design", tag2: "Music", tag3: "2024", openInNewTab: false },
+    { title: "Happy Birthday", secondTitle: "Website", image: "/img/happy.jpg", link: "https://kamilya-happy.vercel.app/", tag: "Development", tag2: "Landing Page", tag3: "2024", openInNewTab: true },
   ];
 
   useEffect(() => {
@@ -111,6 +112,7 @@ export default function Projects() {
               <span className="inline-block">2.</span>
               <span className="inline-block">3.</span>
               <span className="inline-block">4.</span>
+              <span className="inline-block">5.</span>
             </div>
           </div>
         </div>
@@ -118,8 +120,8 @@ export default function Projects() {
           {works.map((work, index) => (
             <div key={index} ref={(el) => { containerRef.current[index] = el; }} className="@container containers lg:min-h-[80vh] pb-4 lg:pb-5">
               <Link href={work.link} target={work.openInNewTab ? "_blank" : "_self"} rel={work.openInNewTab ? "noopener noreferrer" : ""}>
-                <BentoTilt className="relative transition-transform duration-300 ease-out flex aspect-[4/5] lg:aspect-square items-center justify-center overflow-clip rounded-md p-3">
-                  <Image className='absolute h-full w-full object-cover' src={work.image} alt={work.title} width={2000} height={1500} />
+                <BentoTilt className="relative transition-transform duration-300 ease-out flex aspect-[5/4] items-center justify-center overflow-clip rounded-md p-3">
+                  <Image className='absolute h-full w-full object-cover' src={work.image} alt={work.title} width={4000} height={3000} />
                 </BentoTilt>
                 <div className="flex flex-col pt-2">
                   <div className="flex items-center justify-between lg:items-end gap-2 tracking-[0]">
@@ -127,7 +129,7 @@ export default function Projects() {
                     <div className='flex items-center gap-2'>
                       <span className="tag">{work.tag}</span>
                       <span className="tag">{work.tag2}</span>
-                      <span className="tag">2024</span>
+                      <span className="tag">{work.tag3}</span>
                     </div>
                   </div>
                   <div className="flex w-full">
