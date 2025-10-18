@@ -52,7 +52,7 @@ export default function Projects() {
   const works = [
     { title: "LiftUp", secondTitle: "Website", image: "/img/hopecore.jpg", link: "https://liftup-hopecore.vercel.app/", tag: "Development", tag2: "Landing Page", tag3: "2025", openInNewTab: true },
     { title: "The Weeknd", secondTitle: "Poster Design", image: "/img/posterlass.jpg", link: "/projects", tag: "Design", tag2: "Music", tag3: "2024", openInNewTab: false },
-    { title: "Tennis Club", secondTitle: "Website", image: "/img/tennis1.jpg", link: "https://tennisdemo.webflow.io/", tag: "Development", tag2: "Landing Page", tag3: "2024", openInNewTab: true },
+    { title: "Grade Calculator", secondTitle: "Website", image: "/img/grade.jpg", link: "https://aitu-calculator.vercel.app/", tag: "Development", tag2: "Landing Page", tag3: "2025", openInNewTab: true },
     { title: "Damn", secondTitle: "Poster Design", image: "/img/posterdamn.jpg", link: "/projects", tag: "Design", tag2: "Music", tag3: "2024", openInNewTab: false },
     { title: "Happy Birthday", secondTitle: "Website", image: "/img/happy.jpg", link: "https://kamilya-happy.vercel.app/", tag: "Development", tag2: "Landing Page", tag3: "2024", openInNewTab: true },
   ];
