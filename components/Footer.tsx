@@ -23,7 +23,7 @@ export default function Footer() {
   const social = [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/ersinadilkhan/' },
     { name: 'Instagram', href: 'https://www.instagram.com/adilikecious/' },
-    { name: 'Github', href: 'https://github.com/Adilkhan-Ersin' },
+    { name: 'Github', href: 'https://github.com/Adlkhy' },
     { name: 'Telegram', href: 'https://t.me/Adilkhan51' },
   ]
 
